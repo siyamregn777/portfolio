@@ -10,15 +10,19 @@ html {
 }
 
 /* Header (Left Side) */
+/* Make the left sidebar scrollable */
 .header {
-  width: 250px; /* Fixed width for the header */
-  background-color: #1f1f1f; /* Dark background */
+  width: 250px;
+  background-color: #1f1f1f;
   color: #fff;
   padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 100vh; /* Full height */
+  overflow-y: auto; /* Enables vertical scrolling */
 }
+
 
 .profile-img img {
   width: 150px;
@@ -40,7 +44,32 @@ html {
 
 .navmenu ul li {
   margin: 15px 0;
+}.account {
+  display: flex;
+  justify-content: center; /* Centers icons horizontally */
+  align-items: center; /* Aligns them vertically */
+  gap: 15px; /* Adds space between icons */
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
+
+.account li {
+  display: flex;
+  align-items: center;
+}
+
+.account img {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.account img:hover {
+  transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
 
 .navmenu ul li a {
   color: #fff;

@@ -7,6 +7,7 @@ import Footer from '@/components/Footer';
 import { aboutDescription } from './about/page';
 import {contactDescription} from './contact/page';
 import { portfolioDescription } from './portfolio/page';
+import {resumeDescription} from './resume/page';
 import './globals.css';
 
 export default function Home() {
@@ -39,6 +40,11 @@ export default function Home() {
         {aboutDescription}
         
         {portfolioDescription}
+
+       
+        
+        {resumeDescription}
+
 
         {contactDescription}
 
