@@ -1,0 +1,25 @@
+/* nav.css */
+
+/* Set the background color and layout for the navbar */
+.navbar {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    background-color: #333;
+    padding: 1rem 0;
+  }
+  
+  /* Style for each link in the navbar */
+  .navbar a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.125rem;
+    font-weight: 600;
+    transition: color 0.3s ease;
+  }
+  
+  /* Change color on hover */
+  .navbar a:hover {
+    color: #3182ce;
+  }
+  
