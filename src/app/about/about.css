@@ -1,0 +1,57 @@
+/* about.css */
+
+/* Set the background color and full height of the page */
+.about-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+    background-color: #f7fafc;
+  }
+  
+  /* Style the heading */
+  .about-container h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  
+  /* Style the profile image */
+  .about-container img {
+    border-radius: 50%;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  /* Style the paragraph */
+  .about-container p {
+    font-size: 1.125rem;
+    text-align: center;
+    margin-top: 1rem;
+    max-width: 600px;
+    line-height: 1.6;
+  }
+  
+  /* Style for the interactive sentence */
+  .about-container span {
+    display: block;
+    margin-top: 1rem;
+    color: #3182ce;
+    font-weight: 600;
+  }
+  
+  /* Style for the back link */
+  .about-container a {
+    margin-top: 1.5rem;
+    color: #3182ce;
+    text-decoration: none;
+  }
+  
+  .about-container a:hover {
+    text-decoration: underline;
+  }
+  
