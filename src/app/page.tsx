@@ -1,15 +1,21 @@
-import Link from 'next/link';
-import './page.css';  // Import the CSS file
+import Header from '@/components/Header';
+import Footer from '@/components/Footer';
+import './globals.css';
 
 export default function Home() {
   return (
-    <div className="container">
-      <h1 className="title">Hi, I'm Siyamregn Yeshidagna</h1>
-      <p className="description">Full Stack Developer | Building scalable and modern web applications</p>
-      <div className="links">
-        <Link href="/about">About Me</Link>
-        <Link href="/contact">Contact</Link>
+    <div className="header-container">
+      <Header />
+      <div className="content-display">
+        <section id="hero" className="hero section dark-background">
+          <div className="container">
+            <h2>Your Name</h2>
+            <p>I`m a <span className="typed" data-typed-items="Designer, Developer, Freelancer"></span></p>
+          </div>
+        </section>
+        <Footer />
       </div>
+      
     </div>
   );
 }
