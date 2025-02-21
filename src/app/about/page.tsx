@@ -1,13 +1,16 @@
-import Header from '@/components/Header';
+export const aboutDescription = (
+  <section id="about" className="about section">
+    <div className="container">
+      <h2>About Me</h2>
+      <p>More details about your background, skills, and experience.</p>
+    </div>
+  </section>
+);
 
 export default function About() {
   return (
-    <div className="header-container">
-      <Header />
-      <div className="content-display">
-        <h2>About Me</h2>
-        <p>More details about your background, skills, and experience.</p>
-      </div>
+    <div>
+      {aboutDescription}
     </div>
   );
 }
