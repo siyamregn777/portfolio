@@ -26,7 +26,7 @@ export default function Header() {
           className="img-fluid rounded-circle"
         />
       </div>
-      <h1 className="sitename">Your Name</h1>
+      <h1 className="sitename">Siyamregn Yeshidagna</h1>
       <nav className="navmenu">
         {/* Social Media Icons */}
         <ul className="account">

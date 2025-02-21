@@ -32,7 +32,7 @@ export default function Home() {
         {/* Home Section */}
         <section id="home" className="hero section dark-background">
           <div className="container">
-            <h2>siyamregn Yeshidagna</h2>
+            <h2>Siyamregn Yeshidagna</h2>
             <p>I`m a <span className="typed" data-typed-items="Full Stack Developer, Freelancer"></span></p>
           </div>
         </section>
