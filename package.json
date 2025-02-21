@@ -13,8 +13,10 @@
     "bootstrap": "^5.3.3",
     "glightbox": "^3.3.1",
     "next": "15.1.7",
+    "portfolio": "file:",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-scroll": "^1.9.3",
     "swiper": "^11.2.4",
     "typed.js": "^2.1.0"
   },

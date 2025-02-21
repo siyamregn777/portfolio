@@ -62,13 +62,7 @@ export default function Header() {
         </nav>
       </header>
 
-      {/* Content Display */}
-      <div className="content-display">
-        {activePage === 'home' && <div>Home Content</div>}
-        {activePage === 'about' && <div>About Content</div>}
-        {activePage === 'portfolio' && <div>Portfolio Content</div>}
-        {activePage === 'contact' && <div>Contact Content</div>}
-      </div>
+     
     </div>
   );
 }

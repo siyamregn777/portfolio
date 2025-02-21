@@ -53,3 +53,8 @@ body {
   color: #fff;
   margin-bottom: 0%;
 }
+
+.typed {
+  color: #007bff; /* Highlight color for the typed text */
+}
+
