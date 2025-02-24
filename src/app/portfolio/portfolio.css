@@ -1,17 +1,54 @@
-.portfolio {
-    padding: 100px 0;
-    text-align: center;
-  }
-  
-  .portfolio h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-  }
-  
-  .portfolio p {
-    font-size: 1.2rem;
-    color: #666;
-  }
-  .container ul li{
-    list-style: none;
-  }
+.portfolio.section {
+  padding: 50px 0;
+  background-color: #f9f9f9;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.project-card {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.project-card a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.project-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.project-card h3 {
+  margin: 15px 0 10px;
+  font-size: 1.5em;
+}
+
+.project-card p {
+  padding: 0 15px 15px;
+  font-size: 1em;
+  color: #555;
+}

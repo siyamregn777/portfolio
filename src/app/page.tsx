@@ -4,10 +4,11 @@ import { useEffect } from 'react';
 import Typed from 'typed.js';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
-import { aboutDescription } from './about/page';
-import {contactDescription} from './contact/page';
-import { portfolioDescription } from './portfolio/page';
-import {resumeDescription} from './resume/page';
+import About from './about/page';
+// import {contactDescription} from './contact/page';
+import Contact from './contact/page';
+import Portfolio from './portfolio/page';
+import Resume from './resume/page';
 import './globals.css';
 
 export default function Home() {
@@ -37,16 +38,14 @@ export default function Home() {
           </div>
         </section>
 
-        {aboutDescription}
+        <About/>
         
-        {portfolioDescription}
+        <Portfolio/>
 
        
-        
-        {resumeDescription}
+        <Resume/>
 
-
-        {contactDescription}
+        <Contact/>
 
         <Footer />
       </div>
