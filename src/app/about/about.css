@@ -1,14 +1,122 @@
-.about {
-  padding: 100px 0;
-  text-align: center;
+/* Base styles */
+.about.section {
+  padding: 4rem 1rem;
+  background-color: #f9f9f9;
 }
 
-.about h2 {
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.about-heading {
   font-size: 2.5rem;
-  margin-bottom: 20px;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #333;
 }
 
-.about p {
-  font-size: 1.2rem;
+.about-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.about-text {
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  flex: 1; /* Allow text section to grow */
+}
+
+.about-text p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+.about-text strong {
+  color: #007bff;
+}
+
+.about-skills {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem; /* Increased gap between cards */
+}
+
+.skill-card {
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 80%; /* Make cards equal height */
+}
+
+.skill-card:hover {
+  background-color: #beccce; /* Change background color on hover */
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.skill-icon {
+  font-size: 2rem;
+  color: #007bff;
+  margin-bottom: 1rem;
+}
+
+.skill-card h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.skill-card p {
+  font-size: 0.9rem;
   color: #666;
+}
+
+/* Responsive styles */
+@media (min-width: 768px) {
+  .about-content {
+    flex-direction: row;
+    align-items: stretch; /* Ensure equal height for text and cards */
+  }
+
+  .about-text {
+    flex: 2;
+  }
+
+  .about-skills {
+    flex: 1;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem; /* Increased gap between cards */
+  }
+}
+
+@media (min-width: 1024px) {
+  .about-heading {
+    font-size: 3rem;
+  }
+
+  .about-text p {
+    font-size: 1.2rem;
+  }
+
+  .skill-card h3 {
+    font-size: 1.5rem;
+  }
+
+  .skill-card p {
+    font-size: 1rem;
+  }
 }
