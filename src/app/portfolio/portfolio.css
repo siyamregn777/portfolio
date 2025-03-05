@@ -52,3 +52,38 @@
   font-size: 1em;
   color: #555;
 }
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Smaller cards for tablets */
+    gap: 15px; /* Reduce gap between cards */
+  }
+
+  .project-card h3 {
+    font-size: 1.3em; /* Slightly smaller heading */
+  }
+
+  .project-card p {
+    font-size: 0.9em; /* Slightly smaller text */
+  }
+}
+
+@media (max-width: 480px) {
+  .projects-grid {
+    grid-template-columns: 1fr; /* Single column for mobile */
+    gap: 10px; /* Minimal gap between cards */
+  }
+
+  .project-card img {
+    height: 150px; /* Smaller image height */
+  }
+
+  .project-card h3 {
+    font-size: 1.2em; /* Smaller heading */
+  }
+
+  .project-card p {
+    font-size: 0.85em; /* Smaller text */
+  }
+}

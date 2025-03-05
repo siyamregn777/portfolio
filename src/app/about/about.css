@@ -28,7 +28,6 @@
   padding: 1.5rem;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  flex: 1; /* Allow text section to grow */
 }
 
 .about-text p {
@@ -45,7 +44,7 @@
 .about-skills {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 2rem; /* Increased gap between cards */
+  gap: 2rem;
 }
 
 .skill-card {
@@ -55,15 +54,10 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
   transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 80%; /* Make cards equal height */
 }
 
 .skill-card:hover {
-  background-color: #beccce; /* Change background color on hover */
+  background-color: #beccce;
   transform: translateY(-5px);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
@@ -88,18 +82,18 @@
 /* Responsive styles */
 @media (min-width: 768px) {
   .about-content {
-    flex-direction: row;
-    align-items: stretch; /* Ensure equal height for text and cards */
+    flex-direction: row; /* Horizontal layout for desktop */
+    align-items: flex-start; /* Align items to the top */
   }
 
   .about-text {
-    flex: 2;
+    flex: 1; /* Take up 50% of the space */
+    margin-right: 2rem; /* Add spacing between text and skills */
   }
 
   .about-skills {
-    flex: 1;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem; /* Increased gap between cards */
+    flex: 1; /* Take up 50% of the space */
+    grid-template-columns: repeat(2, 1fr); /* Two columns for skills */
   }
 }
 

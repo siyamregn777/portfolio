@@ -5,7 +5,6 @@ import Typed from 'typed.js';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import About from './about/page';
-// import {contactDescription} from './contact/page';
 import Contact from './contact/page';
 import Portfolio from './portfolio/page';
 import Resume from './resume/page';
@@ -29,24 +28,19 @@ export default function Home() {
   return (
     <div className="header-container">
       <Header />
-      <div className="content-display">
+      <div className="content-display main-content"> {/* Add main-content class */}
         {/* Home Section */}
         <section id="home" className="hero section dark-background">
           <div className="container">
             <h2>Siyamregn Yeshidagna</h2>
-            <p>I`m a <span className="typed" data-typed-items="Full Stack Developer, Freelancer"></span></p>
+            <p>I`m a <span className="typed"></span></p> {/* Removed data-typed-items */}
           </div>
         </section>
 
         <About/>
-        
         <Portfolio/>
-
-       
         <Resume/>
-
         <Contact/>
-
         <Footer />
       </div>
     </div>

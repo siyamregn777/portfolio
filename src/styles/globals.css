@@ -3,38 +3,44 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Header Container */
-.header-container {
-  display: flex;
-  height: 100vh; /* Full viewport height */
-}
-
-/* Header (Left Side) */
-/* Make the left sidebar scrollable */
+/* Header (Sidebar) */
 .header {
-  width: 250px;
+  width: 250px; /* Fixed width for the sidebar */
   background-color: #1f1f1f;
   color: #fff;
   padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100vh; /* Full height */
-  overflow-y: auto; /* Enables vertical scrolling */
+  height: 100vh; /* Full viewport height */
+  position: fixed; /* Fixed position */
+  left: 0;
+  top: 0;
+  z-index: 1000; /* Ensure it stays on top */
 }
 
+/* Main Content Area */
+.main-content {
+  margin-left: 250px; /* Offset by the width of the sidebar */
+  padding: 20px;
+  background-color: #f8f9fa; /* Light background */
+  min-height: 100vh; /* Full viewport height */
+}
 
+/* Profile Image */
 .profile-img img {
   width: 150px;
   height: 150px;
   border-radius: 50%;
 }
 
+/* Site Name */
 .sitename {
   margin: 20px 0;
   font-size: 1.25rem;
 }
 
+/* Navigation Menu */
 .navmenu ul {
   list-style: none;
   padding: 0;
@@ -45,19 +51,32 @@ html {
 
 .navmenu ul li {
   margin: 15px 0;
-}.account {
+}
+
+.navmenu ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.1rem;
   display: flex;
-  justify-content: center; /* Centers icons horizontally */
-  align-items: center; /* Aligns them vertically */
-  gap: 15px; /* Adds space between icons */
+  align-items: center;
+  padding: 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.navmenu ul li a:hover {
+  background-color: #007bff; /* Highlight on hover */
+}
+
+/* Social Media Icons */
+.account {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
   list-style: none;
   padding: 0;
   margin: 0;
-}
-
-.account li {
-  display: flex;
-  align-items: center;
 }
 
 .account img {
@@ -71,57 +90,42 @@ html {
   transform: scale(1.1); /* Slight zoom effect on hover */
 }
 
-
-.navmenu ul li a {
+/* Toggle Button for Small Screens */
+.sidebar-toggle {
+  display: none; /* Hidden by default */
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background-color: #007bff;
   color: #fff;
-  text-decoration: none;
-  font-size: 1.1rem;
-  display: block;
+  border: none;
   padding: 10px;
-  border-radius: 5px;
-  transition: background-color 0.3s;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 1001;
 }
 
-.navmenu ul li a:hover {
-  background-color: #007bff; /* Highlight on hover */
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .header {
+    transform: translateX(-100%); /* Hide sidebar by default on small screens */
+  }
+
+  .header.open {
+    transform: translateX(0); /* Show sidebar when open */
+  }
+
+  .sidebar-toggle {
+    display: block; /* Show toggle button on small screens */
+  }
+
+  .main-content {
+    margin-left: 0; /* Remove margin for full-width content on small screens */
+  }
 }
 
-/* Content Display (Right Side) */
-.content-display {
-  flex: 1; /* Take remaining space */
-  padding: 20px;
-  background-color: #f8f9fa; /* Light background */
-  overflow-y: auto; /* Scrollable content */
-}
-
-/* Section Styles */
-.section {
-  padding: 100px 0;
-  text-align: center;
-}
-
-/* Home Section */
-.hero {
-  background-color: #1f1f1f;
-  color: #fff;
-}
-
-/* About Section */
-.about {
-  background-color: #f8f9fa;
-}
-
-/* Portfolio Section */
-.portfolio {
-  background-color: #fff;
-}
-
-/* Contact Section */
-.contact {
-  background-color: #f8f9fa;
-}
-.add{
-  margin-right: 5%;
-  margin-top: 1%;
+/* Icon Spacing */
+.add {
+  margin-right: 10px;
   cursor: pointer;
 }
