@@ -8,7 +8,7 @@ import image4 from '../../public/assets/img/634455157d2e665d824a49064524b49a.jpg
 import image5 from '../../public/assets/img/pngtree-thin-line-house-icon-isolated-on-white-background-vector-png-image_40618990.jpg';
 import image6 from '../../public/assets/img/portfolio-icon-design-free-vector.jpg';
 import image7 from '../../public/assets/img/simple-flat-isolated-people-icon-free-vector.jpg';
-
+// import image8 from '../../public//assets/img/my-profile-img.jpg'
 export default function Header() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
@@ -34,7 +34,7 @@ export default function Header() {
       <header className={`header dark-background ${isSidebarOpen ? 'open' : ''}`}>
         <div className="profile-img">
           <Image
-            src="/assets/img/my-profile-img.jpg"
+            src='/my-profile-img.jpg'
             alt="Profile"
             width={150}
             height={150}

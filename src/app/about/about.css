@@ -80,6 +80,38 @@
 }
 
 /* Responsive styles */
+@media (max-width: 768px) {
+  .about-content {
+    flex-direction: column; /* Stack text and skills vertically on mobile */
+  }
+
+  .about-text {
+    padding: 1rem; /* Reduce padding for mobile */
+  }
+
+  .about-text p {
+    font-size: 1rem; /* Slightly smaller font size for mobile */
+    line-height: 1.5; /* Adjust line height for better readability */
+  }
+
+  .about-skills {
+    grid-template-columns: 1fr; /* Single column for skills on mobile */
+    gap: 1rem; /* Reduce gap between cards */
+  }
+
+  .skill-card {
+    padding: 1rem; /* Reduce padding for mobile */
+  }
+
+  .skill-card h3 {
+    font-size: 1.2rem; /* Slightly smaller heading for mobile */
+  }
+
+  .skill-card p {
+    font-size: 0.85rem; /* Slightly smaller text for mobile */
+  }
+}
+
 @media (min-width: 768px) {
   .about-content {
     flex-direction: row; /* Horizontal layout for desktop */

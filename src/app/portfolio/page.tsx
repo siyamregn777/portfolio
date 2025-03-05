@@ -1,12 +1,12 @@
 'use client'
 import React from 'react';
 import './portfolio.css';
-import Link from 'next/link';
 import Image from 'next/image';
 import image1 from '../../../public/assets/img/Screenshot 2025-03-05 170721.png';
 import image2 from '../../../public/assets/img/Screenshot 2025-03-05 170450.png'
-import image3 from '../../../public/assets/img/Screenshot 2025-03-05 170845.png'
-import image6 from '../../../public/assets/img/Screenshot 2025-03-05 171218.png'
+import image3 from '../../../public/assets/img/Screenshot 2025-03-05 183027.png'
+import image4 from '../../../public/assets/img/Screenshot 2025-03-05 183703.png'
+
 export default function Portfolio() {
   const projects = [
     {
@@ -28,14 +28,13 @@ export default function Portfolio() {
       title: "Portfolio Website",
       description: "A personal portfolio to showcase projects and skills.",
       image: image3,
-      link: "https://example.com/portfolio"
+      link: "https://portfoliomine-seven.vercel.app/"
     },
-    
     {
       id: 4,
       title: "Ecommerce Chatboat",
       description: "Find recipes based on ingredients you have at home.",
-      image: image6,
+      image: image4,
       link: "https://ecommercechatbot.vercel.app/"
     }
   ];
@@ -48,13 +47,12 @@ export default function Portfolio() {
         <div className="projects-grid">
           {projects.map((project) => (
             <div key={project.id} className="project-card">
-              <Link href={`/project/${project.id}`} legacyBehavior>
-                <a>
-                  <Image src={project.image} alt={project.title} width={300} height={200} />
-                  <h3>{project.title}</h3>
-                  <p>{project.description}</p>
-                </a>
-              </Link>
+              {/* Use regular anchor tags to link to external websites */}
+              <a href={project.link} target="_blank" rel="noopener noreferrer">
+                <Image src={project.image} alt={project.title} width={300} height={200} />
+                <h3>{project.title}</h3>
+                <p>{project.description}</p>
+              </a>
             </div>
           ))}
         </div>
