@@ -19,7 +19,7 @@ export default function Portfolio() {
     {
       id: 2,
       title: "E-commerce Platform",
-      description: "An online store with a user-friendly interface.",
+      description: "An online store and shop with a user-friendly interface.",
       image: image2,
       link: "https://ecommerceshop-alpha.vercel.app/"
     },
@@ -33,7 +33,7 @@ export default function Portfolio() {
     {
       id: 4,
       title: "Ecommerce Chatboat",
-      description: "Find recipes based on ingredients you have at home.",
+      description: "Find answer for you question on ecommerce shop.",
       image: image4,
       link: "https://ecommercechatbot.vercel.app/"
     }
