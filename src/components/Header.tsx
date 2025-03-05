@@ -8,7 +8,7 @@ import image4 from '../../public/assets/img/634455157d2e665d824a49064524b49a.jpg
 import image5 from '../../public/assets/img/pngtree-thin-line-house-icon-isolated-on-white-background-vector-png-image_40618990.jpg';
 import image6 from '../../public/assets/img/portfolio-icon-design-free-vector.jpg';
 import image7 from '../../public/assets/img/simple-flat-isolated-people-icon-free-vector.jpg';
-import image8 from '../../public/assets/img/Screenshot 2025-03-05 170450.png'
+import image8 from '../../public/assets/img/Screenshot 2025-03-05 190304.png'
 export default function Header() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
