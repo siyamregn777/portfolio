@@ -16,7 +16,7 @@ html {
   position: fixed; /* Fixed position */
   left: 0;
   top: 0;
-  z-index: 1000; /* Ensure it stays on top */
+  z-index: 1000; 
 }
 
 /* Main Content Area */
