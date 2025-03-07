@@ -1,5 +1,5 @@
 'use client';
-import { useState } from 'react';
+import { useState, useEffect, useRef  } from 'react';
 import Image from 'next/image';
 import image1 from '../../public/assets/img/circle-linkedin-512.webp';
 import image2 from '../../public/assets/img/facebook-logo-facebook-icon-transparent-free-png.webp';
@@ -8,17 +8,56 @@ import image4 from '../../public/assets/img/634455157d2e665d824a49064524b49a.jpg
 import image5 from '../../public/assets/img/pngtree-thin-line-house-icon-isolated-on-white-background-vector-png-image_40618990.jpg';
 import image6 from '../../public/assets/img/portfolio-icon-design-free-vector.jpg';
 import image7 from '../../public/assets/img/simple-flat-isolated-people-icon-free-vector.jpg';
-import image8 from '../../public/assets/img/Screenshot 2025-03-05 190304.png'
+import image8 from '../../public/assets/img/Screenshot 2025-03-05 190304.png';
+
 export default function Header() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState(false); // State for light/dark mode
+  const sidebarRef = useRef<HTMLDivElement>(null);
+
+  // Toggle theme between light and dark
+  const toggleTheme = () => {
+    setIsDarkMode(!isDarkMode);
+  };
+
+  // Apply theme from localStorage on page load
+  useEffect(() => {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+      setIsDarkMode(savedTheme === 'dark');
+    }
+  }, []);
+
+  // Update localStorage whenever theme changes
+  useEffect(() => {
+    if (isDarkMode) {
+      document.body.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
+    } else {
+      document.body.classList.remove('dark');
+      localStorage.setItem('theme', 'light');
+    }
+  }, [isDarkMode]);
 
   const handleScroll = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
     }
-    setIsSidebarOpen(false); // Close sidebar after clicking a link on small screens
+    setIsSidebarOpen(false); // Close sidebar after clicking a link
   };
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (sidebarRef.current && !sidebarRef.current.contains(event.target as Node)) {
+        setIsSidebarOpen(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
 
   return (
     <>
@@ -30,11 +69,19 @@ export default function Header() {
         ☰
       </button>
 
+      {/* Theme Toggle Button */}
+      <button className="theme-toggle" onClick={toggleTheme}>
+        {isDarkMode ? 'Light Mode' : 'Dark Mode'}
+      </button>
+
       {/* Header/Sidebar */}
-      <header className={`header dark-background ${isSidebarOpen ? 'open' : ''}`}>
+      <header
+        ref={sidebarRef}
+        className={`header ${isDarkMode ? 'dark' : 'light'} ${isSidebarOpen ? 'open' : ''}`}
+      >
         <div className="profile-img">
           <Image
-            src={image8} 
+            src={image8}
             alt="Profile"
             width={150}
             height={150}
@@ -43,7 +90,6 @@ export default function Header() {
         </div>
         <h1 className="sitename">Siyamregn Yeshidagna</h1>
         <nav className="navmenu">
-          {/* Social Media Icons */}
           <ul className="account">
             <li>
               <a href="https://github.com/siyamregn777" target="_blank" rel="noopener noreferrer">
@@ -62,7 +108,6 @@ export default function Header() {
             </li>
           </ul>
 
-          {/* Navigation Links */}
           <ul>
             <li>
               <a onClick={() => handleScroll('home')}>

@@ -1,11 +1,16 @@
 'use client';
 
-import { FaCode, FaServer, FaRobot, FaTools } from 'react-icons/fa'; // Icons for skills
+import { FaCode, FaServer, FaRobot, FaTools } from 'react-icons/fa';
 import './about.css';
 
-export default function About() {
+// Define the prop type
+interface AboutProps {
+  theme: string; // 'light' or 'dark'
+}
+
+export default function About({ theme }: AboutProps) {
   return (
-    <section id="about" className="about section">
+    <section id="about" className={`about section ${theme === 'dark' ? 'dark' : 'light'}`}>
       <div className="container">
         <h2 className="about-heading">About Me</h2>
         <div className="about-content">
@@ -32,7 +37,7 @@ export default function About() {
             <div className="skill-card">
               <FaServer className="skill-icon" />
               <h3>Backend</h3>
-              <p>Node.js, Express, MongoDB, REST APIs</p>
+              <p>Node.js, Express, Next.js, MongoDB, Postgres, REST APIs</p>
             </div>
             <div className="skill-card">
               <FaRobot className="skill-icon" />

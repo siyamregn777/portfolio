@@ -6,7 +6,12 @@ import Image from 'next/image';
 import image1 from '../../../public/assets/img/1043108-200.png';
 import image2 from '../../../public/assets/img/images.png';
 
-export default function Contact() {
+// Define the prop type
+interface ContactProps {
+  theme: string; // 'light' or 'dark'
+}
+
+export default function Contact({ theme }: ContactProps) {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -40,7 +45,7 @@ export default function Contact() {
         throw new Error(errorText);
       }
 
-      await response.json(); // No need to assign to a variable if unused
+      await response.json();
       setStatus('Message sent successfully!');
       setFormData({ name: '', email: '', subject: '', message: '' });
     } catch (error) {
@@ -50,7 +55,7 @@ export default function Contact() {
   };
 
   return (
-    <div className="contact-page-container">
+    <div className={`contact-page-container ${theme === 'dark' ? 'dark' : 'light'}`}>
       <div className="left">
         <ul>
           <li>
@@ -61,7 +66,7 @@ export default function Contact() {
               height={30}
               className="img-fluid rounded-circle"
             />
-            +251961177953
+            <span className={theme === 'dark' ? 'dark-text' : ''}>+251961177953</span>
           </li>
           <li>
             <Image
@@ -71,7 +76,7 @@ export default function Contact() {
               height={30}
               className="img-fluid rounded-circle"
             />
-            siyamregnyeshidagna777@gmail.com
+            <span className={theme === 'dark' ? 'dark-text' : ''}>siyamregnyeshidagna777@gmail.com</span>
           </li>
         </ul>
       </div>

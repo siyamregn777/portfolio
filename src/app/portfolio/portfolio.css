@@ -52,7 +52,15 @@
   font-size: 1em;
   color: #555;
 }
+.portfolio.dark {
+  background-color: #121212;
+  color: #fff;
+}
 
+.portfolio.light {
+  background-color: #f8f9fa;
+  color: #333;
+}
 /* Responsive Styles */
 @media (max-width: 768px) {
   .projects-grid {

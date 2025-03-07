@@ -1,10 +1,11 @@
-/* Global Styles */
+/* Global.css */
 body {
   font-family: 'Poppins', sans-serif;
-  color: #333;
   margin: 0;
   padding: 0;
+  transition: background-color 0.3s, color 0.3s;
 }
+
 /* Header Container */
 .header-container {
   display: flex;
@@ -20,6 +21,12 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 100vh; /* Full viewport height */
+  position: fixed; /* Fixed position */
+  left: 0;
+  top: 0;
+  z-index: 1000;
+  overflow-y: auto;
 }
 
 /* Content Display (Right Side) */
@@ -27,7 +34,15 @@ body {
   flex: 1; /* Take remaining space */
   padding: 20px;
   background-color: #f8f9fa; /* Light background */
-  overflow-y: auto; /* Scrollable content */
+  margin-left: 250px; /* Offset by the width of the sidebar */
+  min-height: 100vh; /* Full viewport height */
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Dark Mode for Content Area */
+body.dark .content-display {
+  background-color: #121212;
+  color: #fff;
 }
 
 /* Hero Section */
@@ -45,6 +60,7 @@ body {
   font-size: 1.2rem;
   color: #666;
 }
+
 /* Footer */
 .footer {
   padding: 20px;
@@ -58,3 +74,133 @@ body {
   color: #007bff; /* Highlight color for the typed text */
 }
 
+/* Smooth scrolling behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Profile Image */
+.profile-img img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+/* Site Name */
+.sitename {
+  margin: 20px 0;
+  font-size: 1.25rem;
+}
+
+/* Navigation Menu */
+.navmenu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  cursor: pointer;
+}
+
+.navmenu ul li {
+  margin: 15px 0;
+}
+
+.navmenu ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.navmenu ul li a:hover {
+  background-color: #007bff; /* Highlight on hover */
+}
+
+/* Social Media Icons */
+.account {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.account img {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.account img:hover {
+  transform: scale(1.1); /* Slight zoom effect on hover */
+}
+
+/* Toggle Button for Small Screens */
+.sidebar-toggle {
+  display: none; /* Hidden by default */
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .header {
+    transform: translateX(-100%); /* Hide sidebar by default on small screens */
+  }
+
+  .header.open {
+    transform: translateX(0); /* Show sidebar when open */
+  }
+
+  .sidebar-toggle {
+    display: block; /* Show toggle button on small screens */
+    z-index: 1000;
+  }
+
+  .main-content {
+    margin-left: 0; /* Remove margin for full-width content on small screens */
+  }
+}
+
+/* Icon Spacing */
+.add {
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+/* Button to Toggle Theme */
+.theme-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.theme-toggle:hover {
+  background-color: #0056b3;
+}
+/* Dark mode text color */
+.dark-text {
+  color: white;
+}

@@ -73,7 +73,15 @@
   margin-bottom: 0.5rem;
   color: #333;
 }
+.about.dark {
+  background-color: #121212;
+  color: #fff;
+}
 
+.about.light {
+  background-color: #f8f9fa;
+  color: #333;
+}
 .skill-card p {
   font-size: 0.9rem;
   color: #666;

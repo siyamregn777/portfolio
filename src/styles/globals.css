@@ -117,6 +117,7 @@ html {
 
   .sidebar-toggle {
     display: block; /* Show toggle button on small screens */
+    z-index: 1000;
   }
 
   .main-content {

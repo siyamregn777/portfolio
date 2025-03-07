@@ -140,6 +140,19 @@
   color: #333;
   text-align: center;
 }
+.contact-page-container.dark {
+  background-color: #121212;
+  color: #fff;
+}
+
+.contact-page-container.light {
+  background-color: #f8f9fa;
+  color: #333;
+}
+/* Dark mode text color */
+.dark-text {
+  color: black; /* Set text color to black in dark mode */
+}
 
 /* Responsive Design */
 @media (min-width: 768px) {

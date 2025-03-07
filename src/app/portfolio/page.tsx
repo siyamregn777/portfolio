@@ -1,13 +1,19 @@
-'use client'
+'use client';
+
 import React from 'react';
 import './portfolio.css';
 import Image from 'next/image';
 import image1 from '../../../public/assets/img/Screenshot 2025-03-05 170721.png';
-import image2 from '../../../public/assets/img/Screenshot 2025-03-05 170450.png'
-import image3 from '../../../public/assets/img/Screenshot 2025-03-05 183027.png'
-import image4 from '../../../public/assets/img/Screenshot 2025-03-05 183703.png'
+import image2 from '../../../public/assets/img/Screenshot 2025-03-05 170450.png';
+import image3 from '../../../public/assets/img/Screenshot 2025-03-05 183027.png';
+import image4 from '../../../public/assets/img/Screenshot 2025-03-05 183703.png';
 
-export default function Portfolio() {
+// Define the prop type
+interface PortfolioProps {
+  theme: string; // 'light' or 'dark'
+}
+
+export default function Portfolio({ theme }: PortfolioProps) {
   const projects = [
     {
       id: 1,
@@ -32,22 +38,21 @@ export default function Portfolio() {
     },
     {
       id: 4,
-      title: "Ecommerce Chatboat",
-      description: "Find answer for you question on ecommerce shop.",
+      title: "Ecommerce Chatbot",
+      description: "Find answers for your questions on ecommerce shop.",
       image: image4,
       link: "https://ecommercechatbot.vercel.app/"
     }
   ];
 
   return (
-    <section id="portfolio" className="portfolio section">
+    <section id="portfolio" className={`portfolio section ${theme === 'dark' ? 'dark' : 'light'}`}>
       <div className="container">
         <h2>Portfolio</h2>
         <p>Here are some of my projects:</p>
         <div className="projects-grid">
           {projects.map((project) => (
             <div key={project.id} className="project-card">
-              {/* Use regular anchor tags to link to external websites */}
               <a href={project.link} target="_blank" rel="noopener noreferrer">
                 <Image src={project.image} alt={project.title} width={300} height={200} />
                 <h3>{project.title}</h3>
