@@ -6,7 +6,7 @@ import Image from 'next/image';
 import image1 from '../../../public/assets/img/Screenshot 2025-03-05 170721.png';
 import image2 from '../../../public/assets/img/Screenshot 2025-03-05 170450.png';
 import image3 from '../../../public/assets/img/Screenshot 2025-03-05 183027.png';
-import image4 from '../../../public/assets/img/Screenshot 2025-03-05 183703.png';
+// import image4 from '../../../public/assets/img/Screenshot 2025-03-05 183703.png';
 import { useTheme } from '@/context/ThemeContext'; // Import the useTheme hook
 
 export default function Portfolio() {
@@ -33,13 +33,13 @@ export default function Portfolio() {
       image: image3,
       link: "https://portfoliomine-seven.vercel.app/"
     },
-    {
-      id: 4,
-      title: "Ecommerce Chatbot",
-      description: "Find answers for your questions on ecommerce shop.",
-      image: image4,
-      link: "https://ecommercechatbot.vercel.app/"
-    }
+    // {
+    //   id: 4,
+    //   title: "Ecommerce Chatbot",
+    //   description: "Find answers for your questions on ecommerce shop.",
+    //   image: image4,
+    //   link: "https://ecommercechatbot.vercel.app/"
+    // }
   ];
 
   return (
