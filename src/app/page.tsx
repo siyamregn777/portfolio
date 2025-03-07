@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import Typed from 'typed.js';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
@@ -9,9 +9,10 @@ import Contact from './contact/page';
 import Portfolio from './portfolio/page';
 import Resume from './resume/page';
 import './globals.css';
+import { useTheme } from '@/context/ThemeContext'; // Import the useTheme hook
 
 export default function Home() {
-  const [theme, setTheme] = useState<string>('light');
+  const { theme, toggleTheme } = useTheme(); // Use the theme state and toggle function
 
   // Initialize Typed.js
   useEffect(() => {
@@ -22,24 +23,10 @@ export default function Home() {
       loop: true,
     });
 
-    // Set theme based on the current state
-    if (theme === 'dark') {
-      document.body.classList.add('dark');
-      document.body.classList.remove('light');
-    } else {
-      document.body.classList.add('light');
-      document.body.classList.remove('dark');
-    }
-
     return () => {
       typed.destroy(); // Cleanup on component unmount
     };
-  }, [theme]); // Run when theme changes
-
-  // Toggle theme function
-  const toggleTheme = () => {
-    setTheme(theme === 'light' ? 'dark' : 'light');
-  };
+  }, []);
 
   return (
     <div className="header-container">
@@ -52,19 +39,19 @@ export default function Home() {
 
         {/* Home Section */}
         <section id="home" className="hero section dark-background">
-  <div className="container">
-    <h2 style={{ color: theme === 'dark' ? 'white' : 'inherit' }}>Siyamregn Yeshidagna</h2>
-    <p style={{ color: theme === 'dark' ? 'white' : 'inherit' }}>
-      I`m a <span className="typed"></span>
-    </p>
-  </div>
-</section>
+          <div className="container">
+            <h2 style={{ color: theme === 'dark' ? 'white' : 'inherit' }}>Siyamregn Yeshidagna</h2>
+            <p style={{ color: theme === 'dark' ? 'white' : 'inherit' }}>
+              I`m a <span className="typed"></span>
+            </p>
+          </div>
+        </section>
 
-        {/* Pass the `theme` prop to child components */}
-        <About theme={theme} />
-        <Portfolio theme={theme} />
+        {/* Render child components without passing the `theme` prop */}
+        <About />
+        <Portfolio />
         <Resume />
-        <Contact theme={theme} />
+        <Contact />
         <Footer />
       </div>
     </div>
