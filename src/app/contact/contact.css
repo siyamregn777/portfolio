@@ -151,9 +151,63 @@
 }
 /* Dark mode text color */
 .dark-text {
-  color: black; /* Set text color to black in dark mode */
+  color: rgb(0, 0, 0); /* Set text color to black in dark mode */
+}
+/* Light mode styles */
+.contact-page-container.light {
+  background-color: #f9f9f9;
+  color: #333;
 }
 
+.contact-page-container.light .left,
+.contact-page-container.light .contact-section-wrapper {
+  background-color: #fff;
+}
+
+.contact-page-container.light .contact-form-label,
+.contact-page-container.light .contact-form-input,
+.contact-page-container.light .contact-form-textarea,
+.contact-page-container.light .contact-subtext {
+  color: #333;
+}
+
+/* Dark mode styles */
+.contact-page-container.dark {
+  background-color: rgb(123, 117, 117); /* Change background to brown in dark mode */
+  color: #fff;
+}
+
+.contact-page-container.dark .left,
+.contact-page-container.dark .contact-section-wrapper {
+  background-color: #4c6058; /* Darker background for inner sections */
+}
+
+.contact-page-container.dark .contact-form-label,
+.contact-page-container.dark .contact-form-input,
+.contact-page-container.dark .contact-form-textarea,
+.contact-page-container.dark .contact-subtext {
+  color: #fff; /* Ensure text is white in dark mode */
+}
+
+.contact-page-container.dark .contact-form-input,
+.contact-page-container.dark .contact-form-textarea {
+  background-color: #989c99; /* Darker background for input fields */
+  border-color: #666; /* Darker border for input fields */
+  color: #fff; /* White text for input fields */
+}
+
+.contact-page-container.dark .contact-submit-button {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.contact-page-container.dark .contact-submit-button:hover {
+  background-color: #0056b3;
+}
+
+.contact-page-container.dark .dark-text {
+  color: #fff; /* Ensure phone and email text is white in dark mode */
+}
 /* Responsive Design */
 @media (min-width: 768px) {
   .contact-page-container {
