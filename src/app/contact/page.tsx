@@ -5,13 +5,10 @@ import './contact.css';
 import Image from 'next/image';
 import image1 from '../../../public/assets/img/1043108-200.png';
 import image2 from '../../../public/assets/img/images.png';
+import { useTheme } from '@/context/ThemeContext'; // Import the useTheme hook
 
-// Define the prop type
-interface ContactProps {
-  theme: string; // 'light' or 'dark'
-}
-
-export default function Contact({ theme }: ContactProps) {
+export default function Contact() {
+  const { theme } = useTheme(); // Access the theme state
   const [formData, setFormData] = useState({
     name: '',
     email: '',
