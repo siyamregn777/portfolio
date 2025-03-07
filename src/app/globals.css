@@ -5,11 +5,19 @@ body {
   padding: 0;
   transition: background-color 0.3s, color 0.3s;
 }
+/* Reset extra margins and padding */
+body, html, #root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden; /* Prevent horizontal overflow */
+}
 
 /* Header Container */
 .header-container {
   display: flex;
   height: 100vh; /* Full viewport height */
+  margin-right: 0%;
 }
 
 /* Header (Left Side) */
@@ -30,6 +38,7 @@ body {
 }
 
 /* Content Display (Right Side) */
+/* Content Display (Right Side) */
 .content-display {
   flex: 1; /* Take remaining space */
   padding: 20px;
@@ -37,11 +46,20 @@ body {
   margin-left: 250px; /* Offset by the width of the sidebar */
   min-height: 100vh; /* Full viewport height */
   transition: background-color 0.3s, color 0.3s;
+  width: calc(100% - 250px); /* Ensure full width minus sidebar */
+  box-sizing: border-box; /* Include padding in width calculation */
+  margin-right: 0%;
 }
 
 /* Dark Mode for Content Area */
 body.dark .content-display {
-  background-color: #121212;
+  background-color: #3e3d3d;
+  color: #fff;
+}
+
+/* Dark Mode for Content Area */
+body.dark .content-display {
+  background-color: #3e3d3d;
   color: #fff;
 }
 

@@ -1,15 +1,23 @@
+/* Base styles */
 .portfolio.section {
   padding: 50px 0;
   background-color: #f9f9f9;
 }
 
+/* .container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+} */
 .container {
   width: 90%;
   max-width: 1200px;
   margin: 0 auto;
   text-align: center;
+  padding: 0 20px; /* Add padding for better spacing */
+  box-sizing: border-box; /* Include padding in width calculation */
 }
-
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -52,15 +60,40 @@
   font-size: 1em;
   color: #555;
 }
+
+/* Dark mode styles */
 .portfolio.dark {
-  background-color: #121212;
-  color: #fff;
+  background-color: #444242; /* Dark background for the portfolio section */
+  color: #fff; /* Ensure all text is white in dark mode */
 }
 
+.portfolio.dark .container h2 {
+  color: #fff; /* Make the "Portfolio" heading white in dark mode */
+}
+
+.portfolio.dark .project-card {
+  background-color: #1f1f1f; /* Dark background for project cards */
+  border-color: #333; /* Darker border for project cards */
+}
+
+.portfolio.dark .project-card h3 {
+  color: #fff; /* Ensure project titles are white */
+}
+
+.portfolio.dark .project-card p {
+  color: #ccc; /* Lighter text for project descriptions */
+}
+
+.portfolio.dark .project-card:hover {
+  box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1); /* Lighter shadow for dark mode */
+}
+
+/* Light mode styles */
 .portfolio.light {
   background-color: #f8f9fa;
   color: #333;
 }
+
 /* Responsive Styles */
 @media (max-width: 768px) {
   .projects-grid {
