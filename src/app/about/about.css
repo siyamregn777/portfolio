@@ -73,18 +73,56 @@
   margin-bottom: 0.5rem;
   color: #333;
 }
-.about.dark {
-  background-color: #121212;
-  color: #fff;
-}
 
-.about.light {
-  background-color: #f8f9fa;
-  color: #333;
-}
 .skill-card p {
   font-size: 0.9rem;
   color: #666;
+}
+
+/* Dark mode styles */
+.about.dark {
+  background-color: rgb(77, 74, 74); /* Change background to brown in dark mode */
+  color: #fff; /* Ensure all text is white in dark mode */
+}
+
+.about.dark .about-heading {
+  color: #fff; /* Make "About Me" heading white in dark mode */
+}
+
+.about.dark .about-text {
+  background-color: #444; /* Darker background for text area */
+  color: #fff; /* Ensure text inside is white */
+}
+
+.about.dark .about-text p {
+  color: #fff; /* Ensure paragraph text is white */
+}
+
+.about.dark .about-text strong {
+  color: #007bff; /* Keep strong text blue for contrast */
+}
+
+.about.dark .skill-card {
+  background-color: #555; /* Darker background for skill cards */
+  color: #fff; /* Ensure text inside is white */
+}
+
+.about.dark .skill-card h3 {
+  color: #fff; /* Ensure skill card headings are white */
+}
+
+.about.dark .skill-card p {
+  color: #ccc; /* Lighter text for skill card descriptions */
+}
+
+.about.dark .skill-icon {
+  color: #007bff; /* Keep icon color blue for contrast */
+}
+
+/* Light mode styles */
+.about.light {
+  background-color: #f8f9fa;
+  color: #333;
 }
 
 /* Responsive styles */

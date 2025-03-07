@@ -2,13 +2,11 @@
 
 import { FaCode, FaServer, FaRobot, FaTools } from 'react-icons/fa';
 import './about.css';
+import { useTheme } from '@/context/ThemeContext'; // Import the useTheme hook
 
-// Define the prop type
-interface AboutProps {
-  theme: string; // 'light' or 'dark'
-}
+export default function About() {
+  const { theme } = useTheme(); // Access the theme state
 
-export default function About({ theme }: AboutProps) {
   return (
     <section id="about" className={`about section ${theme === 'dark' ? 'dark' : 'light'}`}>
       <div className="container">
