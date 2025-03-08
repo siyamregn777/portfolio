@@ -10,7 +10,7 @@ import image3 from '../../../public/assets/img/Screenshot 2025-03-05 183027.png'
 import { useTheme } from '@/context/ThemeContext'; // Import the useTheme hook
 
 export default function Portfolio() {
-  const { theme } = useTheme(); // Access the theme state
+  const { theme } = useTheme(); 
   const projects = [
     {
       id: 1,
