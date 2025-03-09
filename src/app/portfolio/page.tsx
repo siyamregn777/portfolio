@@ -7,7 +7,7 @@ import image1 from '../../../public/assets/img/Screenshot 2025-03-05 170721.png'
 import image2 from '../../../public/assets/img/Screenshot 2025-03-05 170450.png';
 import image3 from '../../../public/assets/img/Screenshot 2025-03-05 183027.png';
 // import image4 from '../../../public/assets/img/Screenshot 2025-03-05 183703.png';
-import { useTheme } from '@/context/ThemeContext'; // Import the useTheme hook
+import { useTheme } from '@/context/ThemeContext'; 
 
 export default function Portfolio() {
   const { theme } = useTheme(); 
