@@ -5,7 +5,7 @@ import './portfolio.css';
 import Image from 'next/image';
 import image1 from '../../../public/assets/img/Screenshot 2025-03-05 170721.png';
 import image2 from '../../../public/assets/img/Screenshot 2025-03-05 170450.png';
-import image3 from '../../../public/assets/img/Screenshot 2025-03-05 183027.png';
+import image3 from '../../../public/assets/img/Screenshot 2025-03-20 191000.png';
 // import image4 from '../../../public/assets/img/Screenshot 2025-03-05 183703.png';
 import { useTheme } from '@/context/ThemeContext'; 
 
@@ -31,7 +31,7 @@ export default function Portfolio() {
       title: "Portfolio Website",
       description: "A personal portfolio to showcase projects and skills.",
       image: image3,
-      link: "https://portfoliomine-seven.vercel.app/"
+      link: "https://taskmanage-ecru.vercel.app/"
     },
     // {
     //   id: 4,

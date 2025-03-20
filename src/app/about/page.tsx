@@ -30,7 +30,7 @@ export default function About() {
             <div className="skill-card">
               <FaCode className="skill-icon" />
               <h3>Frontend</h3>
-              <p>React, Next.js, HTML, CSS, JavaScript, TypeScript</p>
+              <p>React, Next.js, HTML, CSS,   Vue.js,   JavaScript, TypeScript</p>
             </div>
             <div className="skill-card">
               <FaServer className="skill-icon" />
@@ -40,12 +40,12 @@ export default function About() {
             <div className="skill-card">
               <FaRobot className="skill-icon" />
               <h3>AI & Automation</h3>
-              <p>AI-driven solutions, chatbots, automation tools</p>
+              <p>AI-driven solutions</p>
             </div>
             <div className="skill-card">
               <FaTools className="skill-icon" />
               <h3>Tools</h3>
-              <p>Git, Docker, VS Code, Postman</p>
+              <p>Git, Docker, VS Code, Postman ,Apidog</p>
             </div>
           </div>
         </div>
