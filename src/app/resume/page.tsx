@@ -14,13 +14,13 @@ export default function Resume() {
         <h2>Resume</h2>
         <div className="pdf-container">
           <iframe
-            src="/SiyamregnYeshidagna.pdf"
+            src="/SiyamrregnYeshidagnaResume.pdf"
             width="100%"
             height="600px"
             title="Siyamregn Yeshidagna Resume"
           >
             This browser does not support PDFs. Please download the PDF to view it: 
-            <a href="/SiyamregnYeshidagna.pdf">Download PDF</a>
+            <a href="/SiyamrregnYeshidagnaResume.pdf">Download PDF</a>
           </iframe>
         </div>
       </div>
