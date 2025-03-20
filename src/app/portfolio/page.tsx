@@ -29,17 +29,11 @@ export default function Portfolio() {
     {
       id: 3,
       title: "Portfolio Website",
-      description: "A personal portfolio to showcase projects and skills.",
+      description: "A personal task management to arrange and track the task.",
       image: image3,
       link: "https://taskmanage-ecru.vercel.app/"
     },
-    // {
-    //   id: 4,
-    //   title: "Ecommerce Chatbot",
-    //   description: "Find answers for your questions on ecommerce shop.",
-    //   image: image4,
-    //   link: "https://ecommercechatbot.vercel.app/"
-    // }
+    
   ];
 
   return (
