@@ -4,9 +4,9 @@ import React from 'react';
 import './portfolio.css';
 import Image from 'next/image';
 import image1 from '../../../public/assets/img/Screenshot 2025-03-05 170721.png';
-import image2 from '../../../public/assets/img/Screenshot 2025-03-05 170450.png';
+import image2 from '../../../public/assets/img/photo_2025-04-01_16-45-07.jpg';
 import image3 from '../../../public/assets/img/Screenshot 2025-03-20 191000.png';
-// import image4 from '../../../public/assets/img/Screenshot 2025-03-05 183703.png';
+import image4 from '../../../public/assets/img/photo_2025-04-01_16-49-59.jpg';
 import { useTheme } from '@/context/ThemeContext'; 
 
 export default function Portfolio() {
@@ -24,7 +24,7 @@ export default function Portfolio() {
       title: "E-commerce Platform",
       description: "An online store and shop with a user-friendly interface.",
       image: image2,
-      link: "https://ecommerceshop-alpha.vercel.app/"
+      link: "https://e-commerce-store-lac-rho.vercel.app/"
     },
     {
       id: 3,
@@ -33,6 +33,17 @@ export default function Portfolio() {
       image: image3,
       link: "https://taskmanage-ecru.vercel.app/"
     },
+
+    {
+      id: 3,
+      title: "Shopify Ecommerce",
+      description: "shopify website usinf liquid.",
+      image: image4,
+      link: "https://qn0mv69od1wmys76-74521411821.shopifypreview.com"
+    },
+    
+
+
     
   ];
 
