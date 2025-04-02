@@ -15,36 +15,31 @@ export default function Portfolio() {
     {
       id: 1,
       title: "Tourism Africa",
-      description: "A web application for managing daily tasks efficiently.",
+      description: "A web application for managing daily tasks efficiently.\nFull Stack",
       image: image1,
       link: "https://africa-tourism.vercel.app/"
     },
     {
       id: 2,
       title: "E-commerce Platform",
-      description: "An online store and shop with a user-friendly interface.",
+      description: "An online store and shop with a user-friendly interface.\nFull Stack",
       image: image2,
       link: "https://e-commerce-store-lac-rho.vercel.app/"
     },
     {
       id: 3,
-      title: "Portfolio Website",
-      description: "A personal task management to arrange and track the task.",
+      title: "Task Management",
+      description: "A personal task management to arrange and track the task.\nFront End",
       image: image3,
       link: "https://taskmanage-ecru.vercel.app/"
     },
-
     {
-      id: 3,
+      id: 4, // Changed id to 4
       title: "Shopify Ecommerce",
-      description: "shopify website usinf liquid.",
+      description: "Shopify website using Liquid.\nFront End",
       image: image4,
       link: "https://qn0mv69od1wmys76-74521411821.shopifypreview.com"
     },
-    
-
-
-    
   ];
 
   return (
@@ -58,7 +53,10 @@ export default function Portfolio() {
               <a href={project.link} target="_blank" rel="noopener noreferrer">
                 <Image src={project.image} alt={project.title} width={300} height={200} />
                 <h3>{project.title}</h3>
-                <p>{project.description}</p>
+                {/* Split the description by '\n' and render each part in a separate <p> */}
+                {project.description.split('\n').map((line, index) => (
+                  <p key={index}>{line}</p>
+                ))}
               </a>
             </div>
           ))}
