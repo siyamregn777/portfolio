@@ -34,7 +34,7 @@ export default function Portfolio() {
       link: "https://taskmanage-ecru.vercel.app/"
     },
     {
-      id: 4, // Changed id to 4
+      id: 4,
       title: "Shopify Ecommerce",
       description: "Shopify website using Liquid.\nFront End",
       image: image4,
