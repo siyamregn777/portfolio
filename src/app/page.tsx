@@ -9,11 +9,8 @@ import Contact from './contact/page';
 import Portfolio from './portfolio/page';
 import Resume from './resume/page';
 import './globals.css';
-import { useTheme } from '@/context/ThemeContext'; // Import the useTheme hook
 
 export default function Home() {
-  const { theme, toggleTheme } = useTheme(); // Use the theme state and toggle function
-
   // Initialize Typed.js
   useEffect(() => {
     const typed = new Typed('.typed', {
@@ -24,36 +21,39 @@ export default function Home() {
     });
 
     return () => {
-      typed.destroy(); // Cleanup on component unmount
+      typed.destroy();
     };
   }, []);
 
   return (
-    <div className="header-container">
+    <div className="main-container">
       <Header />
-      <div className="content-display main-content">
-        {/* Light/Dark theme toggle button */}
-        <button onClick={toggleTheme} className="theme-toggle">
-          Toggle Theme
-        </button>
-
-        {/* Home Section */}
-        <section id="home" className="hero section dark-background">
+      <div className="content">
+        {/* Hero Section */}
+        <section id="home" className="hero section">
           <div className="container">
-            <h2 style={{ color: theme === 'dark' ? 'white' : 'inherit' }}>Siyamregn Yeshidagna</h2>
-            <p style={{ color: theme === 'dark' ? 'white' : 'inherit' }}>
-              I`m a <span className="typed"></span>
+            <h1>Siyamregn Yeshidagna</h1>
+            <p className="hero-subtitle">
+              I`m a <span className="typed"></span> Based in Ethiopia
             </p>
+            <div className="hero-cta">
+              <a href="#contact" className="btn btn-primary">
+                Contact Me
+              </a>
+              <a href="#portfolio" className="btn btn-secondary">
+                View Portfolio
+              </a>
+            </div>
           </div>
         </section>
 
-        {/* Render child components without passing the `theme` prop */}
+        {/* Other Sections */}
         <About />
         <Portfolio />
         <Resume />
         <Contact />
-        <Footer />
       </div>
+      <Footer />
     </div>
   );
 }
