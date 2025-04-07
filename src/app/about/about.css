@@ -1,196 +1,83 @@
-/* Base styles */
 .about.section {
-  padding: 4rem 1rem;
-  background-color: #f9f9f9;
-  margin-top: 190px;
-  margin-right: 0%;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1rem;
-}
-
-.about-heading {
-  font-size: 2.5rem;
-  text-align: center;
-  margin-bottom: 2rem;
-  color: #333;
+  background-color: var(--white);
 }
 
 .about-content {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 40px;
 }
 
 .about-text {
-  background-color: #fff;
-  padding: 1.5rem;
+  background-color: var(--light-color);
+  padding: 30px;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
 }
 
 .about-text p {
+  margin-bottom: 20px;
   font-size: 1.1rem;
-  line-height: 1.6;
-  color: #555;
-  margin-bottom: 1rem;
+  color: var(--text-light);
 }
 
 .about-text strong {
-  color: #007bff;
+  color: var(--primary-color);
 }
 
 .about-skills {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
 }
 
 .skill-card {
-  background-color: #fff;
-  padding: 1.5rem;
+  background-color: var(--white);
+  padding: 25px;
   border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
   text-align: center;
-  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  transition: var(--transition);
 }
 
 .skill-card:hover {
-  background-color: #beccce;
-  transform: translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
 }
 
 .skill-icon {
-  font-size: 2rem;
-  color: #007bff;
-  margin-bottom: 1rem;
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: 15px;
 }
 
 .skill-card h3 {
-  font-size: 1.25rem;
-  margin-bottom: 0.5rem;
-  color: #333;
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  color: var(--dark-color);
 }
 
 .skill-card p {
-  font-size: 0.9rem;
-  color: #666;
+  font-size: 0.95rem;
+  color: var(--text-light);
 }
 
-/* Dark mode styles */
-.about.dark {
-  background-color: rgb(77, 74, 74); /* Change background to brown in dark mode */
-  color: #fff; /* Ensure all text is white in dark mode */
-}
-
-.about.dark .about-heading {
-  color: #fff; /* Make "About Me" heading white in dark mode */
-}
-
-.about.dark .about-text {
-  background-color: #444; /* Darker background for text area */
-  color: #fff; /* Ensure text inside is white */
-}
-
-.about.dark .about-text p {
-  color: #fff; /* Ensure paragraph text is white */
-}
-
-.about.dark .about-text strong {
-  color: #007bff; /* Keep strong text blue for contrast */
-}
-
-.about.dark .skill-card {
-  background-color: #555; /* Darker background for skill cards */
-  color: #fff; /* Ensure text inside is white */
-}
-
-.about.dark .skill-card h3 {
-  color: #fff; /* Ensure skill card headings are white */
-}
-
-.about.dark .skill-card p {
-  color: #ccc; /* Lighter text for skill card descriptions */
-}
-
-.about.dark .skill-icon {
-  color: #007bff; /* Keep icon color blue for contrast */
-}
-
-/* Light mode styles */
-.about.light {
-  background-color: #f8f9fa;
-  color: #333;
-}
-
-/* Responsive styles */
 @media (max-width: 768px) {
   .about-content {
-    flex-direction: column; /* Stack text and skills vertically on mobile */
+    flex-direction: column;
   }
-
-  .about-text {
-    padding: 1rem; /* Reduce padding for mobile */
-  }
-
-  .about-text p {
-    font-size: 1rem; /* Slightly smaller font size for mobile */
-    line-height: 1.5; /* Adjust line height for better readability */
-  }
-
+  
   .about-skills {
-    grid-template-columns: 1fr; /* Single column for skills on mobile */
-    gap: 1rem; /* Reduce gap between cards */
-  }
-
-  .skill-card {
-    padding: 1rem; /* Reduce padding for mobile */
-  }
-
-  .skill-card h3 {
-    font-size: 1.2rem; /* Slightly smaller heading for mobile */
-  }
-
-  .skill-card p {
-    font-size: 0.85rem; /* Slightly smaller text for mobile */
+    grid-template-columns: 1fr 1fr;
   }
 }
 
-@media (min-width: 768px) {
-  .about-content {
-    flex-direction: row; /* Horizontal layout for desktop */
-    align-items: flex-start; /* Align items to the top */
-  }
-
-  .about-text {
-    flex: 1; /* Take up 50% of the space */
-    margin-right: 2rem; /* Add spacing between text and skills */
-  }
-
+@media (max-width: 576px) {
   .about-skills {
-    flex: 1; /* Take up 50% of the space */
-    grid-template-columns: repeat(2, 1fr); /* Two columns for skills */
+    grid-template-columns: 1fr;
   }
-}
-
-@media (min-width: 1024px) {
-  .about-heading {
-    font-size: 3rem;
-  }
-
-  .about-text p {
-    font-size: 1.2rem;
-  }
-
-  .skill-card h3 {
-    font-size: 1.5rem;
-  }
-
-  .skill-card p {
-    font-size: 1rem;
+  
+  .about-text {
+    padding: 20px;
   }
 }
