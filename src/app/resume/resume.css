@@ -1,77 +1,38 @@
-/* Base styles */
 .resume.section {
-  padding: 50px 0;
-  background-color: #f9f9f9;
+  background-color: var(--light-color);
 }
 
-.container {
-  width: 90%;
-  max-width: 1200px;
-  margin: 0 auto;
+.resume-content {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.resume-download {
   text-align: center;
 }
 
-h2 {
-  margin-bottom: 20px;
-  font-size: 2em;
-  color: #333;
-}
-
-.pdf-container {
-  margin-top: 20px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
+.resume-preview {
+  background-color: var(--white);
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
   overflow: hidden;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-iframe {
+.resume-preview iframe {
   border: none;
   width: 100%;
-  height: 600px;
+  min-height: 600px;
 }
 
-/* Dark mode styles */
-.resume.dark {
-  background-color: #463d3d; /* Dark background for the resume section */
-  color: #fff; /* Ensure all text is white in dark mode */
-}
-
-.resume.dark h2 {
-  color: #fff; /* Ensure the heading is white in dark mode */
-}
-
-.resume.dark .pdf-container {
-  border-color: #333; /* Darker border for the PDF container */
-  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1); /* Lighter shadow for dark mode */
-}
-
-/* Light mode styles */
-.resume.light {
-  background-color: #f8f9fa;
-  color: #333;
-}
-
-/* Responsive Design */
 @media (max-width: 768px) {
-  .pdf-container {
-    width: 100%;
-    height: 500px;
-  }
-  iframe {
-    height: 500px;
+  .resume-preview iframe {
+    min-height: 500px;
   }
 }
 
-@media (max-width: 480px) {
-  .pdf-container {
-    width: 100%;
-    height: 400px;
-  }
-  iframe {
-    height: 400px;
-  }
-  h2 {
-    font-size: 1.5em;
+@media (max-width: 576px) {
+  .resume-preview iframe {
+    min-height: 400px;
   }
 }
