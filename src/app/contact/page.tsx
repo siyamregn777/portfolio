@@ -1,14 +1,10 @@
 'use client';
 
 import { useState } from 'react';
+import { FaPhone, FaEnvelope, FaPaperPlane } from 'react-icons/fa';
 import './contact.css';
-import Image from 'next/image';
-import image1 from '../../../public/assets/img/1043108-200.png';
-import image2 from '../../../public/assets/img/images.png';
-import { useTheme } from '@/context/ThemeContext'; // Import the useTheme hook
 
 export default function Contact() {
-  const { theme } = useTheme(); // Access the theme state
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -25,7 +21,6 @@ export default function Contact() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
     setStatus('Sending...');
 
     try {
@@ -37,113 +32,88 @@ export default function Contact() {
         body: JSON.stringify(formData),
       });
 
-      if (!response.ok) {
-        const errorText = await response.text();
-        throw new Error(errorText);
-      }
-
-      await response.json();
+      if (!response.ok) throw new Error('Failed to send message');
+      
       setStatus('Message sent successfully!');
       setFormData({ name: '', email: '', subject: '', message: '' });
     } catch (error) {
       console.error('Error:', error);
-      setStatus('An error occurred. Please try again.');
+      setStatus('Failed to send message. Please try again.');
     }
   };
 
   return (
-    <div className={`contact-page-container ${theme === 'dark' ? 'dark' : 'light'}`}>
-      <div className="left">
-        <ul>
-          <li>
-            <Image
-              src={image1}
-              alt="Phone"
-              width={30}
-              height={30}
-              className="img-fluid rounded-circle"
-            />
-            <span className={theme === 'dark' ? 'dark-text' : ''}>+251961177953</span>
-          </li>
-          <li>
-            <Image
-              src={image2}
-              alt="Email"
-              width={30}
-              height={30}
-              className="img-fluid rounded-circle"
-            />
-            <span className={theme === 'dark' ? 'dark-text' : ''}>siyamregnyeshidagna777@gmail.com</span>
-          </li>
-        </ul>
-      </div>
-
-      <section id="contact" className="contact-section-wrapper">
-        <div className="contact-content-container">
-          <h2 className="contact-heading">Contact Me</h2>
-          <p className="contact-subtext">Feel free to reach out to me:</p>
-
-          <form onSubmit={handleSubmit} className="contact-form-wrapper">
-            <div className="contact-form-row">
-              <div className="contact-form-group contact-form-group-horizontal">
-                <label htmlFor="name" className="contact-form-label">Name:</label>
+    <section id="contact" className="contact section">
+      <div className="container">
+        <h2 className="section-title">Contact Me</h2>
+        <div className="contact-content">
+          <div className="contact-info">
+            <div className="info-item">
+              <FaPhone className="info-icon" />
+              <div>
+                <h3>Phone</h3>
+                <p>+251961177953</p>
+              </div>
+            </div>
+            <div className="info-item">
+              <FaEnvelope className="info-icon" />
+              <div>
+                <h3>Email</h3>
+                <p>siyamregnyeshidagna777@gmail.com</p>
+              </div>
+            </div>
+          </div>
+          
+          <form onSubmit={handleSubmit} className="contact-form">
+            <div className="form-row">
+              <div className="form-group">
                 <input
                   type="text"
-                  id="name"
                   name="name"
                   value={formData.name}
                   onChange={handleChange}
+                  placeholder="Your Name"
                   required
-                  className="contact-form-input"
                 />
               </div>
-
-              <div className="contact-form-group contact-form-group-horizontal">
-                <label htmlFor="email" className="contact-form-label">Email:</label>
+              <div className="form-group">
                 <input
                   type="email"
-                  id="email"
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
+                  placeholder="Your Email"
                   required
-                  className="contact-form-input"
                 />
               </div>
             </div>
-
-            <div className="contact-form-group">
-              <label htmlFor="subject" className="contact-form-label">Subject:</label>
+            <div className="form-group">
               <input
                 type="text"
-                id="subject"
                 name="subject"
                 value={formData.subject}
                 onChange={handleChange}
+                placeholder="Subject"
                 required
-                className="contact-form-input"
               />
             </div>
-
-            <div className="contact-form-group">
-              <label htmlFor="message" className="contact-form-label">Message:</label>
+            <div className="form-group">
               <textarea
-                id="message"
                 name="message"
                 value={formData.message}
                 onChange={handleChange}
+                placeholder="Your Message"
                 required
-                className="contact-form-textarea"
-              />
+                rows={5}
+              ></textarea>
             </div>
-
-            <button type="submit" className="contact-submit-button">
-              Send Message
+            <button type="submit" className="btn btn-primary">
+              <FaPaperPlane /> Send Message
             </button>
+            {status && <p className="form-status">{status}</p>}
           </form>
-          {status && <p className="contact-status-message">{status}</p>}
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
   );
 }
