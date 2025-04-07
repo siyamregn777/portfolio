@@ -1,6 +1,6 @@
 'use client';
 
-import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
+import {  FaExternalLinkAlt } from 'react-icons/fa';
 import './portfolio.css';
 import Image from 'next/image';
 const projects = [
@@ -17,8 +17,7 @@ const projects = [
     title: "Tourism Africa",
     description: "A web application for showcasing African tourism destinations with booking functionality.",
     technologies: ["React", "Next.js", "Node.js", "MongoDB"],
-    image: "/assets/img/africa.png",
-    github: "https://github.com/siyamregn777/tourism-africa",
+    image: "/assets/img/photo_2025-04-07_12-18-31.jpg",
     live: "https://africa-tourism.vercel.app/"
   },
   {
@@ -26,7 +25,7 @@ const projects = [
     title: "E-commerce Platform",
     description: "A full-featured online store with product management, cart, and checkout.",
     technologies: ["React", "Redux", "Node.js", "Express", "MongoDB"],
-    image: "/assets/img/ecomeerce.jpg",
+    image: "/assets/img/photo_2025-04-07_12-19-10.jpg",
     live: "https://e-commerce-store-lac-rho.vercel.app/"
   },
   {
@@ -34,7 +33,7 @@ const projects = [
     title: "Task Management",
     description: "A productivity app for organizing and tracking personal and team tasks.",
     technologies: ["Vue.js", "Css"],
-    image: "/assets/img/task.png",
+    image: "/assets/img/photo_2025-04-07_12-19-02.jpg",
     live: "https://taskmanage-ecru.vercel.app/"
   }
   
@@ -53,11 +52,6 @@ export default function Portfolio() {
               <div className="project-image">
                 <Image src={project.image} alt={project.title} width={400} height={400} />
                 <div className="project-links">
-                  {project.github && (
-                    <a href={project.github} target="_blank" rel="noopener noreferrer">
-                      <FaGithub /> Code
-                    </a>
-                  )}
                   <a href={project.live} target="_blank" rel="noopener noreferrer">
                     <FaExternalLinkAlt /> Live
                   </a>
