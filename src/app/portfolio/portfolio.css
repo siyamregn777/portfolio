@@ -1,130 +1,128 @@
-/* Base styles */
 .portfolio.section {
-  padding: 50px 0;
-  background-color: #f9f9f9;
+  background-color: var(--white);
 }
 
-/* .container {
-  width: 90%;
-  max-width: 1200px;
-  margin: 0 auto;
+.section-subtitle {
   text-align: center;
-} */
-.container {
-  width: 90%;
-  max-width: 1200px;
-  margin: 0 auto;
-  text-align: center;
-  padding: 0 20px; /* Add padding for better spacing */
-  box-sizing: border-box; /* Include padding in width calculation */
+  margin-bottom: 50px;
+  color: var(--text-light);
 }
+
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  margin-top: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 30px;
 }
 
 .project-card {
-  background: #fff;
-  border: 1px solid #ddd;
-  border-radius: 8px;
+  background-color: var(--light-color);
+  border-radius: 10px;
   overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: var(--transition);
 }
 
 .project-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
 }
 
-.project-card a {
-  text-decoration: none;
-  color: inherit;
-  display: block;
+.project-image {
+  position: relative;
+  height: 250px;
+  overflow: hidden;
 }
 
-.project-card img {
+.project-image img {
   width: 100%;
-  height: 200px;
+  height: 100%;
   object-fit: cover;
+  transition: var(--transition);
 }
 
-.project-card h3 {
-  margin: 15px 0 10px;
-  font-size: 1.5em;
+.project-card:hover .project-image img {
+  transform: scale(1.05);
 }
 
-.project-card p {
-  padding: 0 15px 15px;
-  font-size: 1em;
-  color: #555;
+.project-links {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  background-color: rgba(0, 0, 0, 0.7);
+  padding: 15px;
+  transform: translateY(100%);
+  transition: var(--transition);
 }
 
-/* Dark mode styles */
-.portfolio.dark {
-  background-color: #444242; /* Dark background for the portfolio section */
-  color: #fff; /* Ensure all text is white in dark mode */
+.project-card:hover .project-links {
+  transform: translateY(0);
 }
 
-.portfolio.dark .container h2 {
-  color: #fff; /* Make the "Portfolio" heading white in dark mode */
+.project-links a {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: var(--white);
+  padding: 8px;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: var(--transition);
 }
 
-.portfolio.dark .project-card {
-  background-color: #1f1f1f; /* Dark background for project cards */
-  border-color: #333; /* Darker border for project cards */
+.project-links a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
-.portfolio.dark .project-card h3 {
-  color: #fff; /* Ensure project titles are white */
+.project-links a:first-child {
+  margin-right: 10px;
 }
 
-.portfolio.dark .project-card p {
-  color: #ccc; /* Lighter text for project descriptions */
+.project-content {
+  padding: 25px;
 }
 
-.portfolio.dark .project-card:hover {
-  box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1); /* Lighter shadow for dark mode */
+.project-content h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  color: var(--dark-color);
 }
 
-/* Light mode styles */
-.portfolio.light {
-  background-color: #f8f9fa;
-  color: #333;
+.project-content p {
+  color: var(--text-light);
+  margin-bottom: 15px;
 }
 
-/* Responsive Styles */
+.project-technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.project-technologies span {
+  background-color: rgba(52, 152, 219, 0.1);
+  color: var(--primary-color);
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
 @media (max-width: 768px) {
   .projects-grid {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Smaller cards for tablets */
-    gap: 15px; /* Reduce gap between cards */
-  }
-
-  .project-card h3 {
-    font-size: 1.3em; /* Slightly smaller heading */
-  }
-
-  .project-card p {
-    font-size: 0.9em; /* Slightly smaller text */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 576px) {
   .projects-grid {
-    grid-template-columns: 1fr; /* Single column for mobile */
-    gap: 10px; /* Minimal gap between cards */
+    grid-template-columns: 1fr;
   }
-
-  .project-card img {
-    height: 150px; /* Smaller image height */
-  }
-
-  .project-card h3 {
-    font-size: 1.2em; /* Smaller heading */
-  }
-
-  .project-card p {
-    font-size: 0.85em; /* Smaller text */
+  
+  .project-image {
+    height: 200px;
   }
 }
