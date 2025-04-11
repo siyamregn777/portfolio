@@ -1,6 +1,6 @@
 'use client';
 
-import { FaCode, FaServer, FaRobot, FaTools } from 'react-icons/fa';
+import { FaCode, FaServer,FaTools } from 'react-icons/fa';
 import './about.css';
 
 export default function About() {
@@ -34,11 +34,7 @@ export default function About() {
               <h3>Backend</h3>
               <p>Node.js, Express, Next.js, MongoDB, Postgres, REST APIs</p>
             </div>
-            <div className="skill-card">
-              <FaRobot className="skill-icon" />
-              <h3>AI & Automation</h3>
-              <p>AI-driven solutions</p>
-            </div>
+           
             <div className="skill-card">
               <FaTools className="skill-icon" />
               <h3>Tools</h3>
