@@ -1,83 +1,193 @@
-.about.section {
+/* ===== About Section ===== */
+.about-section {
+  padding: 5rem 0;
   background-color: var(--white);
+  position: relative;
+  overflow: hidden;
+}
+
+.about-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(58, 134, 255, 0.03) 0%, rgba(131, 56, 236, 0.03) 100%);
+  z-index: 0;
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 3rem;
+  text-align: center;
+  color: var(--dark-color);
+  position: relative;
+}
+
+.section-title .highlight {
+  color: var(--primary-color);
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 80px;
+  height: 4px;
+  background: var(--primary-gradient);
+  margin: 1rem auto 0;
+  border-radius: 2px;
 }
 
 .about-content {
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 4rem;
 }
 
 .about-text {
-  background-color: var(--light-color);
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  background-color: var(--white);
+  padding: 2.5rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  position: relative;
+  z-index: 1;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.about-text::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--primary-gradient);
+  border-radius: 4px 0 0 4px;
 }
 
 .about-text p {
-  margin-bottom: 20px;
+  margin-bottom: 1.5rem;
   font-size: 1.1rem;
-  color: var(--text-light);
+  line-height: 1.8;
+  color: var(--text-color);
+}
+
+.about-text .intro-text {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.about-text .closing-text {
+  font-weight: 500;
+  color: var(--primary-color);
 }
 
 .about-text strong {
   color: var(--primary-color);
+  font-weight: 600;
 }
 
 .about-skills {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
+  gap: 1.5rem;
 }
 
 .skill-card {
   background-color: var(--white);
-  padding: 25px;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  padding: 2rem 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
   text-align: center;
-  transition: var(--transition);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  cursor: default;
 }
 
 .skill-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 15px 30px rgba(58, 134, 255, 0.1);
+  border-color: rgba(58, 134, 255, 0.2);
+}
+
+.skill-icon-container {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(58, 134, 255, 0.1) 0%, rgba(131, 56, 236, 0.1) 100%);
+  border-radius: 50%;
 }
 
 .skill-icon {
-  font-size: 2.5rem;
+  font-size: 1.75rem;
   color: var(--primary-color);
-  margin-bottom: 15px;
 }
 
 .skill-card h3 {
-  font-size: 1.3rem;
-  margin-bottom: 10px;
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
   color: var(--dark-color);
+  font-weight: 600;
 }
 
 .skill-card p {
   font-size: 0.95rem;
   color: var(--text-light);
+  line-height: 1.6;
+}
+
+/* ===== Responsive Design ===== */
+@media (max-width: 992px) {
+  .about-content {
+    gap: 3rem;
+  }
+  
+  .about-text {
+    padding: 2rem;
+  }
 }
 
 @media (max-width: 768px) {
-  .about-content {
-    flex-direction: column;
+  .section-title {
+    font-size: 2.2rem;
+    margin-bottom: 2.5rem;
   }
   
   .about-skills {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   }
 }
 
 @media (max-width: 576px) {
-  .about-skills {
-    grid-template-columns: 1fr;
+  .about-section {
+    padding: 3rem 0;
+  }
+  
+  .section-title {
+    font-size: 2rem;
   }
   
   .about-text {
-    padding: 20px;
+    padding: 1.5rem;
+  }
+  
+  .about-text p {
+    font-size: 1rem;
+  }
+  
+  .about-skills {
+    grid-template-columns: 1fr;
   }
 }

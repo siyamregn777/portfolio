@@ -1,60 +1,119 @@
 'use client';
 
-import {  FaExternalLinkAlt } from 'react-icons/fa';
-import './portfolio.css';
+import { FaExternalLinkAlt, FaGithub } from 'react-icons/fa';
+import { motion } from 'framer-motion';
 import Image from 'next/image';
+import './portfolio.css';
+
 const projects = [
   {
     id: 4,
     title: "Shopify Store",
-    description: "Custom Shopify ecommerce website built with Liquid templating.",
+    description: "Custom Shopify ecommerce website built with Liquid templating, featuring product customization and seamless checkout experience.",
     technologies: ["Shopify", "Liquid", "HTML/CSS", "JavaScript"],
     image: "/assets/img/shopify.jpg",
-    live: "https://yz6sdp-vb.myshopify.com/"
+    live: "https://yz6sdp-vb.myshopify.com/",
+    code: "#"
   },
   {
     id: 1,
     title: "Tourism Africa",
-    description: "A web application for showcasing African tourism destinations with booking functionality.",
-    technologies: ["React", "Next.js", "Node.js", "MongoDB"],
+    description: "A comprehensive platform showcasing African tourism destinations with booking functionality and interactive maps.",
+    technologies: ["React", "Next.js", "Node.js", "MongoDB", "Mapbox"],
     image: "/assets/img/photo_2025-04-07_12-18-31.jpg",
-    live: "https://africa-tourism.vercel.app/"
+    live: "https://africa-tourism.vercel.app/",
+    code: "#"
   },
   {
     id: 2,
     title: "E-commerce Platform",
-    description: "A full-featured online store with product management, cart, and checkout.",
-    technologies: ["React", "Redux", "Node.js", "Express", "MongoDB"],
+    description: "Full-featured online store with product management, cart system, secure checkout, and admin dashboard.",
+    technologies: ["React", "Redux", "Node.js", "Express", "MongoDB", "Stripe"],
     image: "/assets/img/photo_2025-04-07_12-19-10.jpg",
-    live: "https://e-commerce-store-lac-rho.vercel.app/"
+    live: "https://e-commerce-store-lac-rho.vercel.app/",
+    code: "#"
   },
   {
     id: 3,
     title: "Task Management",
-    description: "A productivity app for organizing and tracking personal and team tasks.",
-    technologies: ["Vue.js", "Css"],
+    description: "Productivity app with drag-and-drop interface, team collaboration features, and progress tracking.",
+    technologies: ["Vue.js", "Tailwind CSS", "Firebase", "Vuex"],
     image: "/assets/img/photo_2025-04-07_12-19-02.jpg",
-    live: "https://taskmanage-ecru.vercel.app/"
+    live: "https://taskmanage-ecru.vercel.app/",
+    code: "#"
   }
-  
 ];
 
 export default function Portfolio() {
+  const fadeIn = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 }
+  };
+
+  const staggerContainer = {
+    visible: {
+      transition: {
+        staggerChildren: 0.1
+      }
+    }
+  };
+
   return (
-    <section id="portfolio" className="portfolio section">
+    <section id="portfolio" className="portfolio-section">
       <div className="container">
-        <h2 className="section-title">My Portfolio</h2>
-        <p className="section-subtitle">Here are some of my recent projects</p>
-        
-        <div className="projects-grid">
-          {projects.map((project) => (
-            <div key={project.id} className="project-card">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={fadeIn}
+        >
+          <h2 className="section-title">My <span className="highlight">Portfolio</span></h2>
+          <p className="section-subtitle">A showcase of my best projects and work</p>
+        </motion.div>
+
+        <motion.div
+          className="projects-grid"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={staggerContainer}
+        >
+          {projects.map((project ) => (
+            <motion.div
+              key={project.id}
+              className="project-card"
+              variants={fadeIn}
+              whileHover={{ y: -10 }}
+            >
               <div className="project-image">
-                <Image src={project.image} alt={project.title} width={400} height={400} />
-                <div className="project-links">
-                  <a href={project.live} target="_blank" rel="noopener noreferrer">
-                    <FaExternalLinkAlt /> Live
-                  </a>
+                <Image 
+                  src={project.image} 
+                  alt={project.title} 
+                  width={600} 
+                  height={400}
+                  className="project-img"
+                />
+                <div className="project-overlay">
+                  <div className="project-links">
+                    <a 
+                      href={project.live} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="project-link"
+                    >
+                      <FaExternalLinkAlt /> Live Demo
+                    </a>
+                    {project.code && (
+                      <a 
+                        href={project.code} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="project-link"
+                      >
+                        <FaGithub /> View Code
+                      </a>
+                    )}
+                  </div>
                 </div>
               </div>
               <div className="project-content">
@@ -66,9 +125,9 @@ export default function Portfolio() {
                   ))}
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

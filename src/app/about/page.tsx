@@ -1,45 +1,101 @@
 'use client';
 
-import { FaCode, FaServer,FaTools } from 'react-icons/fa';
+import { FaCode, FaServer, FaTools,  FaMobile } from 'react-icons/fa';
+import { motion } from 'framer-motion';
 import './about.css';
 
 export default function About() {
+  const fadeIn = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
+  };
+
+  const skillCards = [
+    {
+      icon: <FaCode className="skill-icon" />,
+      title: "Frontend",
+      skills: "React, Next.js, HTML5, CSS3, JavaScript, TypeScript, Vue.js"
+    },
+    {
+      icon: <FaServer className="skill-icon" />,
+      title: "Backend",
+      skills: "Node.js, Express, Next.js API, MongoDB, PostgreSQL, REST APIs"
+    },
+    {
+      icon: <FaMobile className="skill-icon" />,
+      title: "Mobile",
+      skills: "React Native, Progressive Web Apps, Responsive Design"
+    },
+    {
+      icon: <FaTools className="skill-icon" />,
+      title: "Tools",
+      skills: "Git, Docker, VS Code, Postman, Apidog, CI/CD"
+    }
+  ];
+
   return (
-    <section id="about" className="about section">
+    <section id="about" className="about-section">
       <div className="container">
-        <h2 className="section-title">About Me</h2>
+        <motion.h2 
+          className="section-title"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={fadeIn}
+        >
+          About <span className="highlight">Me</span>
+        </motion.h2>
+        
         <div className="about-content">
-          <div className="about-text">
-            <p>
-              I`m a passionate <strong>Full-Stack Developer</strong> with expertise in modern web technologies, 
-              backend development, and AI-driven solutions. With a strong foundation in 
-              JavaScript, TypeScript, React, Next.js, and Node.js, I build high-performance, 
-              scalable, and user-friendly applications.
+          <motion.div 
+            className="about-text"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={fadeIn}
+          >
+            <p className="intro-text">
+              I`m a passionate <strong>Full-Stack Developer</strong> and <strong>AI Enthusiast</strong> with expertise in modern web technologies, backend development, and AI-driven solutions.
             </p>
             <p>
-              Beyond coding, I have experience in virtual assistance, ensuring efficiency 
-              and organization for clients. I am detail-oriented, always eager to learn, 
-              and committed to delivering top-notch solutions. Let`s collaborate and bring 
-              your ideas to life!
+              With extensive experience in JavaScript, TypeScript, React, Next.js, and Node.js, I specialize in building high-performance, scalable applications that deliver exceptional user experiences.
             </p>
-          </div>
+            <p>
+              My background includes virtual assistance and project management, giving me unique insights into workflow optimization and client communication. I`m detail-oriented, constantly learning, and committed to delivering innovative solutions.
+            </p>
+            <p className="closing-text">
+              Let`s collaborate to transform your ideas into reality with cutting-edge technology!
+            </p>
+          </motion.div>
+
           <div className="about-skills">
-            <div className="skill-card">
-              <FaCode className="skill-icon" />
-              <h3>Frontend</h3>
-              <p>React, Next.js, HTML, CSS, Vue.js, JavaScript, TypeScript</p>
-            </div>
-            <div className="skill-card">
-              <FaServer className="skill-icon" />
-              <h3>Backend</h3>
-              <p>Node.js, Express, Next.js, MongoDB, Postgres, REST APIs</p>
-            </div>
-           
-            <div className="skill-card">
-              <FaTools className="skill-icon" />
-              <h3>Tools</h3>
-              <p>Git, Docker, VS Code, Postman, Apidog</p>
-            </div>
+            {skillCards.map((skill, index) => (
+              <motion.div
+                key={index}
+                className="skill-card"
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+                variants={{
+                  ...fadeIn,
+                  visible: { 
+                    opacity: 1, 
+                    y: 0, 
+                    transition: { 
+                      duration: 0.6,
+                      delay: index * 0.1 
+                    } 
+                  }
+                }}
+                whileHover={{ scale: 1.05 }}
+              >
+                <div className="skill-icon-container">
+                  {skill.icon}
+                </div>
+                <h3>{skill.title}</h3>
+                <p>{skill.skills}</p>
+              </motion.div>
+            ))}
           </div>
         </div>
       </div>

@@ -13,7 +13,7 @@
     "bootstrap": "^5.3.3",
     "framer-motion": "^12.9.2",
     "glightbox": "^3.3.1",
-    "next": "15.1.7",
+    "next": "^15.3.1",
     "nodemailer": "^6.10.0",
     "portfolio": "file:",
     "react": "^19.0.0",

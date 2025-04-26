@@ -8,20 +8,20 @@ import About from './about/page';
 import Contact from './contact/page';
 import Portfolio from './portfolio/page';
 import './globals.css';
+// import './page.css'; // New CSS file
 
 export default function Home() {
-  // Initialize Typed.js
   useEffect(() => {
     const typed = new Typed('.typed', {
-      strings: ['Full Stack Developer', 'Freelancer'],
-      typeSpeed: 100,
-      backSpeed: 50,
+      strings: ['Full Stack Developer', 'Freelancer', 'UI/UX Enthusiast', 'Open Source Contributor'],
+      typeSpeed: 70,
+      backSpeed: 40,
       loop: true,
+      showCursor: true,
+      cursorChar: '|',
     });
 
-    return () => {
-      typed.destroy();
-    };
+    return () => typed.destroy();
   }, []);
 
   return (
@@ -29,13 +29,13 @@ export default function Home() {
       <Header />
       <div className="content">
         {/* Hero Section */}
-        <section id="home" className="hero section">
-          <div className="container">
-            <h1>Siyamregn Yeshidagna</h1>
+        <section id="home" className="hero">
+          <div className="hero-content">
+            <h1 className="hero-title">Siyamregn Yeshidagna</h1>
             <p className="hero-subtitle">
-              I`m a <span className="typed"></span> Based in Ethiopia
+              I`m a <span className="typed"></span> based in Ethiopia.
             </p>
-            <div className="hero-cta">
+            <div className="hero-buttons">
               <a href="#contact" className="btn btn-primary">
                 Contact Me
               </a>
