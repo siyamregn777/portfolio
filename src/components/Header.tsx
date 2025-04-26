@@ -39,7 +39,7 @@ export default function Header() {
       <div className="container nav-container">
         <Link href="/" className="logo">
           <Image src={logo} alt="Siyamregn Yeshidagna" width={40} height={40} />
-          <span>Siyamregn</span>
+          <span>Siyamregn .</span>
         </Link>
 
         <div className={`hamburger ${isActive ? 'active' : ''}`} onClick={toggleMenu}>
@@ -62,14 +62,10 @@ export default function Header() {
             </li>
             <li className="nav-item">
               <a className="nav-link" onClick={() => handleNavClick('portfolio')}>
-                Portfolio
+                My Work
               </a>
             </li>
-            <li className="nav-item">
-              <a className="nav-link" onClick={() => handleNavClick('resume')}>
-                Resume
-              </a>
-            </li>
+            
             <li className="nav-item">
               <a className="nav-link" onClick={() => handleNavClick('contact')}>
                 Contact
