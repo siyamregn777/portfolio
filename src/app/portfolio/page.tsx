@@ -1,46 +1,46 @@
 'use client';
 
-import { FaExternalLinkAlt, FaGithub } from 'react-icons/fa';
+import { FaExternalLinkAlt } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import './portfolio.css';
 
 const projects = [
   {
-    id: 4,
-    title: "Shopify Store",
+    id: 1,
+    title: "Ecommerce Store",
     description: "Custom Shopify ecommerce website built with Liquid templating, featuring product customization and seamless checkout experience.",
-    technologies: ["Shopify", "Liquid", "HTML/CSS", "JavaScript"],
-    image: "/assets/img/shopify.jpg",
-    live: "https://yz6sdp-vb.myshopify.com/",
-    code: "#"
+    technologies: ["Tailwind", "Next-js", "HTML/CSS", "JavaScript"],
+    image: "/assets/img/photo_2025-04-27_03-14-04.jpg",
+    live: "https://glowing-storess.vercel.app/",
+    
   },
   {
-    id: 1,
+    id: 2,
     title: "Tourism Africa",
     description: "A comprehensive platform showcasing African tourism destinations with booking functionality and interactive maps.",
     technologies: ["React", "Next.js", "Node.js", "MongoDB", "Mapbox"],
     image: "/assets/img/photo_2025-04-07_12-18-31.jpg",
     live: "https://africa-tourism.vercel.app/",
-    code: "#"
+   
   },
   {
-    id: 2,
+    id: 3,
     title: "E-commerce Platform",
     description: "Full-featured online store with product management, cart system, secure checkout, and admin dashboard.",
     technologies: ["React", "Redux", "Node.js", "Express", "MongoDB", "Stripe"],
     image: "/assets/img/photo_2025-04-07_12-19-10.jpg",
     live: "https://e-commerce-store-lac-rho.vercel.app/",
-    code: "#"
+   
   },
   {
-    id: 3,
+    id: 4,
     title: "Task Management",
     description: "Productivity app with drag-and-drop interface, team collaboration features, and progress tracking.",
     technologies: ["Vue.js", "Tailwind CSS", "Firebase", "Vuex"],
     image: "/assets/img/photo_2025-04-07_12-19-02.jpg",
     live: "https://taskmanage-ecru.vercel.app/",
-    code: "#"
+   
   }
 ];
 
@@ -67,7 +67,7 @@ export default function Portfolio() {
           viewport={{ once: true, margin: "-100px" }}
           variants={fadeIn}
         >
-          <h2 className="section-title">My <span className="highlight">Portfolio</span></h2>
+          <h2 className="section-title">My <span className="highlight">Work</span></h2>
           <p className="section-subtitle">A showcase of my best projects and work</p>
         </motion.div>
 
@@ -103,7 +103,7 @@ export default function Portfolio() {
                     >
                       <FaExternalLinkAlt /> Live Demo
                     </a>
-                    {project.code && (
+                    {/* {project.code && (
                       <a 
                         href={project.code} 
                         target="_blank" 
@@ -112,7 +112,7 @@ export default function Portfolio() {
                       >
                         <FaGithub /> View Code
                       </a>
-                    )}
+                    )} */}
                   </div>
                 </div>
               </div>

@@ -48,55 +48,74 @@
   border-radius: 2px;
 }
 
-.about-content {
+/* Photo + Description Grid */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 3rem;
+  margin-bottom: 4rem;
+}
+
+.about-photo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.photo-frame {
+  width: 100%;
+  max-width: 350px;
+  aspect-ratio: 1/1;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+  border: 5px solid var(--white);
+  background: var(--light-color);
+}
+
+.profile-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.about-description {
   display: flex;
   flex-direction: column;
-  gap: 4rem;
+  justify-content: center;
 }
 
-.about-text {
-  background-color: var(--white);
-  padding: 2.5rem;
-  border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-  position: relative;
-  z-index: 1;
-  border: 1px solid rgba(0, 0, 0, 0.05);
-}
-
-.about-text::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 4px;
-  height: 100%;
-  background: var(--primary-gradient);
-  border-radius: 4px 0 0 4px;
-}
-
-.about-text p {
+.description-title {
+  font-size: 1.5rem;
+  font-weight: 600;
   margin-bottom: 1.5rem;
+  color: var(--primary-color);
+}
+
+.about-description p {
+  margin-bottom: 1.2rem;
   font-size: 1.1rem;
   line-height: 1.8;
   color: var(--text-color);
 }
 
-.about-text .intro-text {
+.about-description .intro-text {
   font-size: 1.2rem;
   font-weight: 500;
 }
 
-.about-text .closing-text {
+.about-description .closing-text {
   font-weight: 500;
   color: var(--primary-color);
 }
 
-.about-text strong {
+.about-description strong {
   color: var(--primary-color);
   font-weight: 600;
 }
 
+/* Skills Section */
 .about-skills {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -150,12 +169,12 @@
 
 /* ===== Responsive Design ===== */
 @media (max-width: 992px) {
-  .about-content {
-    gap: 3rem;
+  .about-grid {
+    gap: 2rem;
   }
   
-  .about-text {
-    padding: 2rem;
+  .photo-frame {
+    max-width: 300px;
   }
 }
 
@@ -163,6 +182,18 @@
   .section-title {
     font-size: 2.2rem;
     margin-bottom: 2.5rem;
+  }
+  
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .about-photo {
+    margin-bottom: 2rem;
+  }
+  
+  .photo-frame {
+    max-width: 280px;
   }
   
   .about-skills {
@@ -179,11 +210,7 @@
     font-size: 2rem;
   }
   
-  .about-text {
-    padding: 1.5rem;
-  }
-  
-  .about-text p {
+  .about-description p {
     font-size: 1rem;
   }
   

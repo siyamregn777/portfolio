@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { FaGithub, FaLinkedin, FaTwitter, FaEnvelope} from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaEnvelope} from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import '../styles/footer.css';
 
@@ -15,11 +15,7 @@ export default function Footer() {
       url: "https://linkedin.com/in/yourprofile",
       label: "LinkedIn"
     },
-    {
-      icon: <FaTwitter />,
-      url: "https://twitter.com/yourprofile",
-      label: "Twitter"
-    },
+  
     {
       icon: <FaEnvelope />,
       url: "mailto:siyamregnyeshidagna777@gmail.com",

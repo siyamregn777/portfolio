@@ -13,7 +13,7 @@ import './globals.css';
 export default function Home() {
   useEffect(() => {
     const typed = new Typed('.typed', {
-      strings: ['Full Stack Developer', 'Freelancer', 'UI/UX Enthusiast', 'Open Source Contributor'],
+      strings: ['Full Stack Developer', 'Freelancer'],
       typeSpeed: 70,
       backSpeed: 40,
       loop: true,
@@ -40,7 +40,7 @@ export default function Home() {
                 Contact Me
               </a>
               <a href="#portfolio" className="btn btn-secondary">
-                View Portfolio
+                View My Work
               </a>
             </div>
           </div>
