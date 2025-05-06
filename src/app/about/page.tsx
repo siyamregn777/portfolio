@@ -15,7 +15,7 @@ export default function About() {
     {
       icon: <FaCode className="skill-icon" />,
       title: "Frontend",
-      skills: "React, Next.js, HTML5, CSS3, JavaScript, TypeScript, Vue.js"
+      skills: "React, Next.js, HTML5, CSS3, JavaScript, TypeScript, Tailwind css"
     },
     {
       icon: <FaServer className="skill-icon" />,
@@ -25,12 +25,12 @@ export default function About() {
     {
       icon: <FaMobile className="skill-icon" />,
       title: "Mobile",
-      skills: "React Native, Progressive Web Apps, Responsive Design"
+      skills: "Make the website Responsive"
     },
     {
       icon: <FaTools className="skill-icon" />,
       title: "Tools",
-      skills: "Git, Docker, VS Code, Postman, Apidog, CI/CD"
+      skills: "Git, Docker, VS Code, Postman, Apidog"
     }
   ];
 
@@ -78,7 +78,7 @@ export default function About() {
           >
             <h3 className="description-title">Full Stack Developer & AI Enthusiast</h3>
             <p className="intro-text">
-              I`m a passionate <strong>Full-Stack Developer</strong> and <strong>AI Enthusiast</strong> with expertise in modern web technologies, backend development, and AI-driven solutions.
+              I`m a passionate <strong>Full-Stack Developer</strong> and <strong>AI Enthusiast</strong> with expertise in modern web technologies, backend development.
             </p>
             <p>
               With extensive experience in JavaScript, TypeScript, React, Next.js, and Node.js, I specialize in building high-performance, scalable applications that deliver exceptional user experiences.
