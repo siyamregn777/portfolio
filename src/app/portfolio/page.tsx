@@ -26,15 +26,6 @@ const projects = [
   },
   {
     id: 3,
-    title: "E-commerce Platform",
-    description: "Full-featured online store with product management, cart system, secure checkout, and admin dashboard.",
-    technologies: ["React", "Redux", "Node.js", "Express", "MongoDB", "Stripe"],
-    image: "/assets/img/photo_2025-04-07_12-19-10.jpg",
-    live: "https://e-commerce-store-lac-rho.vercel.app/",
-   
-  },
-  {
-    id: 4,
     title: "Task Management",
     description: "Productivity app with drag-and-drop interface, team collaboration features, and progress tracking.",
     technologies: ["Vue.js", "Tailwind CSS", "Firebase", "Vuex"],
