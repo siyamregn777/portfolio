@@ -1,6 +1,6 @@
 'use client';
 
-import { FaCode, FaServer, FaTools, FaMobile } from 'react-icons/fa';
+import { FaCode, FaServer, FaTools } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import './about.css';
@@ -22,11 +22,11 @@ export default function About() {
       title: "Backend",
       skills: "Node.js, Express, Next.js API, MongoDB, PostgreSQL, REST APIs"
     },
-    {
-      icon: <FaMobile className="skill-icon" />,
-      title: "Mobile",
-      skills: "Make the website Responsive"
-    },
+    // {
+    //   icon: <FaMobile className="skill-icon" />,
+    //   title: "Mobile",
+    //   skills: "Make the website Responsive"
+    // },
     {
       icon: <FaTools className="skill-icon" />,
       title: "Tools",
